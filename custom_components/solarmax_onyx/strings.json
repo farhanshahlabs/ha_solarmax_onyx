@@ -1,0 +1,30 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "SolarTouch",
+        "description": "Enter your CloudInverter.net credentials.",
+        "data": {
+          "username": "Username",
+          "password": "Password"
+        }
+      },
+      "plant": {
+        "title": "Select Plant",
+        "description": "Choose the plant to monitor. Add the integration again to monitor additional plants.",
+        "data": {
+          "group_id": "Plant"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password.",
+      "cannot_connect": "Could not connect to CloudInverter.net. Check your internet connection.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This plant is already configured.",
+      "all_plants_configured": "All plants on this account are already configured."
+    }
+  }
+}
