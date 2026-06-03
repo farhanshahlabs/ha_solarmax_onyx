@@ -24,7 +24,8 @@ If you log into [www.cloudinverter.net](https://www.cloudinverter.net) or the So
 
 ## Features
 
-- **30 sensors** — solar power, battery SOC/SOH/voltage/temp, grid power, home load, PV string data, self-consumption rate, and more
+- **62 sensors** — full coverage of the CloudInverter Information tab: solar, battery, BMS, grid, home load, backup/EPS load, PV strings, and inverter health
+- **Per-plant accuracy** — energy and power values are scoped to each individual plant, not aggregated across the whole account
 - **Animated power flow card** — live diagram showing energy flow between solar panels, battery, grid, and home (requires [power-flow-card-plus](https://github.com/flixlix/power-flow-card-plus))
 - **Automatic updates** every 5 minutes
 - **Config flow UI** — set up via Settings → Integrations, no YAML required
@@ -77,31 +78,98 @@ To monitor multiple plants, add the integration again and select a different pla
 
 ## Sensors
 
+### Solar
 | Sensor | Unit | Description |
 |--------|------|-------------|
-| Solar Power | W | Current AC output |
+| Solar Power | W | Current AC output (per-plant) |
 | Solar Energy Today | kWh | Energy generated today |
 | Solar Energy Total | kWh | Lifetime energy |
+| Solar Hours Total | h | Total operating hours |
 | Solar Peak Power | W | Highest output ever recorded |
+
+### PV Strings
+| Sensor | Unit | Description |
+|--------|------|-------------|
+| PV1/2/3 Voltage | V | Per-string voltage |
+| PV1/2/3 Current | A | Per-string current |
+| PV1/2/3 Power | W | Per-string power |
+
+### Grid
+| Sensor | Unit | Description |
+|--------|------|-------------|
 | Grid Power | W | Grid import (+) / export (−) |
+| Grid L1 Voltage | V | Grid line voltage |
+| Grid L1 Current | A | Grid line current |
+| Grid L1 Power | W | Grid line power |
+| Grid Frequency | Hz | Grid frequency |
+| Feed-in Energy Today | kWh | Energy exported to grid today |
+| Total Feed-in Energy | kWh | Lifetime energy exported |
+| Purchased Energy Today | kWh | Energy imported from grid today |
+| Total Purchased Energy | kWh | Lifetime energy imported |
+
+### Home Load
+| Sensor | Unit | Description |
+|--------|------|-------------|
 | Home Load Power | W | Current home consumption |
-| Battery Power | W | Charge/discharge power |
+| Load L1 Voltage | V | Load line voltage |
+| Load L1 Current | A | Load line current |
+| Load L1 Power | W | Load line power |
+| Load Frequency | Hz | Load frequency |
+| Home Load Today | kWh | Home consumption today |
+| Total Home Load | kWh | Lifetime home consumption |
+
+### Backup / EPS Load
+| Sensor | Unit | Description |
+|--------|------|-------------|
+| Backup L1 Voltage | V | EPS line voltage |
+| Backup L1 Current | A | EPS line current |
+| Backup L1 Power | W | EPS line power |
+| Backup Frequency | Hz | EPS frequency |
+| Backup Load Today | kWh | EPS consumption today |
+| Total Backup Load | kWh | Lifetime EPS consumption |
+
+### Battery
+| Sensor | Unit | Description |
+|--------|------|-------------|
+| Battery Power | W | Combined charge/discharge power |
+| Battery Charging Power | W | Active charging power |
+| Battery Discharging Power | W | Active discharging power |
 | Battery SOC | % | State of charge |
 | Battery SOH | % | State of health |
 | Battery Voltage | V | Terminal voltage |
 | Battery Current | A | Charge/discharge current |
 | Battery Temperature | °C | BMS temperature |
+| Battery Health Status | — | Health status string |
+| Battery Brand | — | Battery manufacturer |
+| Battery Capacity | Ah | Rated capacity |
+| Battery Daily Charged | kWh | Energy charged today |
+| Battery Daily Discharged | kWh | Energy discharged today |
 | Battery Total Charged | kWh | Lifetime energy charged |
 | Battery Total Discharged | kWh | Lifetime energy discharged |
+
+### BMS
+| Sensor | Unit | Description |
+|--------|------|-------------|
+| BMS Charge Limit Voltage | V | Max charge voltage |
+| BMS Charge Limit Current | A | Max charge current |
+| BMS Discharge Limit Voltage | V | Min discharge voltage |
+| BMS Discharge Limit Current | A | Max discharge current |
+| BMS Firmware Version | — | BMS firmware string |
+| BMS Battery Count | — | Number of battery packs |
+| BMS Alarm Count | — | Active alarms |
+| BMS Protect Count | — | Active protections |
+
+### Inverter Health
+| Sensor | Unit | Description |
+|--------|------|-------------|
 | Inverter Temperature | °C | Heat sink temperature |
 | Inverter Status | — | Normal / Warning / Alarm / Offline |
 | Inverter Operating Status | — | Off_Grid / On_Grid / Backup |
-| Self Consumption Rate | % | Daily self-consumption |
-| Self Sufficiency Rate | % | Daily self-sufficiency |
+| Inverter Firmware | — | Master DSP firmware version |
+| Self Consumption Rate | % | Daily self-consumption rate |
+| Self Sufficiency Rate | % | Daily self-sufficiency rate |
 | Communication Status | — | WiFi dongle Online / Offline |
-| PV1/2/3 Voltage | V | Per-string PV voltage |
-| PV1/2/3 Current | A | Per-string PV current |
-| PV1/2/3 Power | W | Per-string PV power |
+| Signal Strength | dBm | WiFi signal strength |
 
 ---
 
