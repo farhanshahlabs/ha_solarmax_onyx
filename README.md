@@ -1,7 +1,7 @@
 # SolarTouch — Home Assistant Integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
-[![GitHub release](https://img.shields.io/github/v/release/farhanshahlabs/solarmax_onyx)](https://github.com/farhanshahlabs/solarmax_onyx/releases)
+[![GitHub release](https://img.shields.io/github/v/release/farhanshahlabs/ha_solarmax_onyx)](https://github.com/farhanshahlabs/ha_solarmax_onyx/releases)
 
 <img src="icon.png" alt="SolarTouch" width="120" align="right"/>
 
@@ -52,7 +52,7 @@ If you log into [www.cloudinverter.net](https://www.cloudinverter.net) or the So
 ### Via HACS (recommended)
 
 1. In HACS, go to **Integrations → Custom repositories**
-2. Add `https://github.com/farhanshahlabs/solarmax_onyx` as an **Integration**
+2. Add `https://github.com/farhanshahlabs/ha_solarmax_onyx` as an **Integration**
 3. Search for **SolarTouch** and download it
 4. Restart Home Assistant
 

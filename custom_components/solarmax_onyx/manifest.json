@@ -4,9 +4,9 @@
   "codeowners": ["@farhanshahlabs"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/farhanshahlabs/solarmax_onyx",
+  "documentation": "https://github.com/farhanshahlabs/ha_solarmax_onyx",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/farhanshahlabs/solarmax_onyx/issues",
+  "issue_tracker": "https://github.com/farhanshahlabs/ha_solarmax_onyx/issues",
   "requirements": [],
   "version": "1.5.0"
 }
