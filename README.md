@@ -216,4 +216,4 @@ Pull requests welcome. Please open an issue first to discuss any significant cha
 
 ## License
 
-MIT
+GPL-3.0 license
